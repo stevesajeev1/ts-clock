@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: grid;
+    place-content: center;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(var(--GRID-SIZE), var(--CELL-SIZE));
+    grid-template-rows: repeat(var(--GRID-SIZE), var(--CELL-SIZE));
+    border: 1px solid black;
+}
+
+#grid div {
+    width: var(--CELL-SIZE);
+    height: var(--CELL-SIZE);
+    font-family: monospace;
+    font-size: calc(0.75 * var(--CELL-SIZE));
+    text-align: center;
+}
