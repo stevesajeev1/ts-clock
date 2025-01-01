@@ -61,7 +61,8 @@ const render = () => {
     const now = new Date();
     const seconds = now.getSeconds();
     const minutes = now.getMinutes();
-    const hours = now.getHours() % 12;
+    let hours = now.getHours() % 12;
+    if (hours === 0) hours = 12;
     
     const start = new Date(new Date().setHours(0, 0, 0, 0));
     const ms = now.getTime() - start.getTime();
