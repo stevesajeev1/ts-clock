@@ -19,6 +19,7 @@ body {
     grid-template-columns: repeat(var(--GRID-SIZE), var(--CELL-SIZE));
     grid-template-rows: repeat(var(--GRID-SIZE), var(--CELL-SIZE));
     border: 1px solid black;
+    border-radius: 100%;
 }
 
 #grid div {
@@ -27,4 +28,19 @@ body {
     font-family: monospace;
     font-size: calc(0.75 * var(--CELL-SIZE));
     text-align: center;
+}
+
+.second {
+    color: red;
+    border: 1px solid red;
+}
+
+.minute {
+    color: blue;
+    border: 1px solid blue;
+}
+
+.hour {
+    color: black;
+    border: 1px solid black;
 }

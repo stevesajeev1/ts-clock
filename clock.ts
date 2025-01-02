@@ -32,7 +32,7 @@ for (let r = 0; r < GRID_SIZE; r++) {
 }
 
 // Plot points
-const plot = (ratio: number, len: number, val: number) => {
+const plot = (ratio: number, len: number, val: number, clazz: string) => {
     const angle = 2 * Math.PI * ratio;
 
     // Lerp from (0,0) to (end_x, end_y)
@@ -53,6 +53,7 @@ const plot = (ratio: number, len: number, val: number) => {
 	const c = Math.round(x) + Math.floor(RADIUS);
 
 	cells[r][c].textContent = `${val}`;
+	cells[r][c].className = clazz;
     }
 }
 
@@ -80,13 +81,14 @@ const render = () => {
     for (let r = 0; r < GRID_SIZE; r++) {
 	for (let c = 0; c < GRID_SIZE; c++) {
 	    cells[r][c].textContent = "";
+	    cells[r][c].className = "";
 	}
     }
 
     // Plot lines
-    plot(hours_ratio, HOUR_LEN, hours);
-    plot(minutes_ratio, MINUTE_LEN, minutes);
-    plot(seconds_ratio, SECOND_LEN, seconds);
+    plot(seconds_ratio, SECOND_LEN, seconds, 'second');
+    plot(minutes_ratio, MINUTE_LEN, minutes, 'minute');
+    plot(hours_ratio, HOUR_LEN, hours, 'hour');
             
     requestAnimationFrame(render);
 }
